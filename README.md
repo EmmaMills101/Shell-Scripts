@@ -12,7 +12,7 @@ For all .fasta in a folder, will create a new folder "prokka" which has output a
 If genomes are in .fna, update the script accordingly 
 
 # filter_contigs_length.sh
-Removes length of all contigs based on length threshold. Must have bbmap installed to run the script. To change the threshold, update line 7 accordingly. Usage is sh filter_contigs_length.sh /path/to/fastas 
+Removes length of all contigs based on length threshold. Must have bbmap installed to run the script. To change the threshold, update line 13 accordingly. Usage is sh filter_contigs_length.sh /path/to/fastas 
 If genomes are in .fna, update the script accordingly
 
 
