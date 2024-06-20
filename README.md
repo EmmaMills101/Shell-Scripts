@@ -15,6 +15,9 @@ If genomes are in .fna, update the script accordingly
 Removes length of all contigs based on length threshold. Must have bbmap installed via conda to run the script. To change the threshold, update line 13 accordingly. Usage is sh filter_contigs_length.sh /path/to/fastas 
 If genomes are in .fna, update the script accordingly
 
+# amrfinder.txt 
+Runs amrfinder on all assemblies in a folder. Script is made to use E. faecium chromosomal database. Update -O flag based on species, or remove the flag if no database exists. Usage is sh amrfinder.sh path/to/fastas
+
 
 
 
