@@ -1,0 +1,13 @@
+for assembly in *.fasta
+do
+    # get the base of the filename
+	base=$(basename $assembly .assembly.fa)
+    # run AMFinderPlus with output going to the base.amrfinder
+    amrfinder -n $assembly --threads 6 --plus -O Enterococcus_faecium > $base.amrfinder
+done
+
+
+# get one copy of the header
+head -1 $(ls *.amrfinder | head -1) > combined.tsv
+# skip headers and concatinate all files ending in .amrfinder
+grep -h -v 'Protein identifier' *.amrfinder >> combined.tsv
