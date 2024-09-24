@@ -16,9 +16,7 @@ Removes length of all contigs based on length threshold. Must have bbmap install
 If genomes are in .fna, update the script accordingly
 
 # amrfinder.sh
-Runs amrfinder on all assemblies in a folder. Script is made to use E. faecium chromosomal database. Update -O flag based on species, or remove the flag if no database exists (line 17). Usage is sh amrfinder.sh path/to/fastas.
-If genomes are in .fna, update the script accordingly 
-
+Runs amrfinder on all assemblies in a folder. Can handle both .fna and .fasta files. Usage sh amrfinder.sh -i /path/to/input_directory -o combined_output.tsv -O SpeciesDatabase. Please see the available chromosomal databases https://github.com/ncbi/amr/wiki/Running-AMRFinderPlus#--organism-option
 # combined_contigs.sh
 Combined all contigs in a assembly file, specifically a .fna, into 1 contig. If your assemblies end in .fasta or another extention please edit the script accordingly. 
 
