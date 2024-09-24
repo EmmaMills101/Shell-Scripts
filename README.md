@@ -20,6 +20,9 @@ Runs amrfinder on all assemblies in a folder. Can handle both .fna and .fasta fi
 # combined_contigs.sh
 Combined all contigs in a assembly file, specifically a .fna, into 1 contig. If your assemblies end in .fasta or another extention please edit the script accordingly. 
 
+# run_tracs.sh 
+Runs tracs align on reads in input folder. Reads must end in .fastq.gz. The script prefixes the outputs based on the string of characters before "_", so for example DVT1234_S12_fastq.gz, the prefix would be DVT1234. The usage is bash run_tracs.sh -i path/to/reads -o /path/to/output --db path/to/database/
+
 
 
 
