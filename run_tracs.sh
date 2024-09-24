@@ -46,14 +46,8 @@ fi
 
 # Loop through all .fastq.gz files in the input path
 for file in "${files[@]}"; do
-  # Extract the first DVT#### pattern from the filename
-  base_name=$(basename "$file" | grep -oE 'DVT[0-9]{4}' | head -n 1)
-
-  # Check if a valid base name was found
-  if [ -z "$base_name" ]; then
-    echo "Warning: No valid DVT#### pattern found in filename '$file'. Skipping."
-    continue
-  fi
+  # Extract the string before the first underscore in the filename
+  base_name=$(basename "$file" | cut -d'_' -f1)
 
   # Run the tracs align command with the specified database and paths
   echo "Processing file: $file"
