@@ -23,6 +23,9 @@ Combined all contigs in a assembly file, specifically a .fna, into 1 contig. If 
 # run_tracs.sh 
 Runs tracs align on reads in input folder. Reads must end in .fastq.gz. The script prefixes the outputs based on the string of characters before "_", so for example DVT1234_S12_fastq.gz, the prefix would be DVT1234. The usage is bash run_tracs.sh -i path/to/reads -o /path/to/output --db path/to/database/
 
+# bakta.sh
+Runs bakta on fasta or fna files in input folder. The script prefixes output files and locus-tags with input filenames. The usage is bakta.sh -i /path/to/input_dir -o /path/to/output_dir -d /path/to/db
+
 
 
 
