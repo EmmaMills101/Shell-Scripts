@@ -8,8 +8,7 @@ If reads do not end in R1_001 or R2_001, update script accordingly. Assemblies w
 For all .fasta files in a folder, will prefix lines that start with ">" (aka contigs) with respective assembly ID. Usage is sh rename_contigs.sh /path/to/fastas
 
 # prokka.sh
-For all .fasta in a folder, will create a new folder "prokka" which has output and locus-tag prefixed by assembly ID. Usage sh prokka.sh /path/to/fastas
-If genomes are in .fna, update the script accordingly 
+Will run on all .fasta or .fna in assemblies folder, will create a new folder "prokka" which has output and locus-tag prefixed by assembly ID. Usage sh prokka.sh -i Specify the input directory containing .fasta or .fna files -o Specify the output directory for prokka results. (default: ./prokka)
 
 # filter_contigs_length.sh
 Removes length of all contigs based on length threshold. Must have bbmap installed via conda to run the script. To change the threshold, update line 13 accordingly. Usage is sh filter_contigs_length.sh /path/to/fastas 
