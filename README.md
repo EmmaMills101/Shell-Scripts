@@ -25,6 +25,23 @@ Runs tracs align on reads in input folder. Reads must end in .fastq.gz. The scri
 # bakta.sh
 Runs bakta on fasta or fna files in input folder. The script prefixes output files and locus-tags with input filenames. The usage is bakta.sh -i /path/to/input_dir -o /path/to/output_dir -d /path/to/db
 
+# quast.sh
+Runs QUAST on all assembly files in a folder. Creates individual output folders named based on input assembly name. Summarizes QC results across all input files into an excel sheet. Usage is: sh quast.sh -i /path/to/assemblies -o quast_results -f quast_summary.xlsx
+
+# read_depth_Multiple.py
+Calculates read coverage based on paired-end reads and genome size. Searches quast_summary.xlsx file for genome size and matches the sample ID with the paired end read name. Therefore, quast.sh must be run before using read_depth_Multiple.py. The tool will calculate coverage for each input sample and combine the results into summary excel sheet. Usage is: python read_depth_Multiple.py -r /path/to/reads -q /path/to/quast_summary.xlsx -o read_coverage.xlsx
+
+# kraken.sh
+Runs kraken2 on all paired end reads in input folder. Creates summary file of the top three species hits for each sample. Creates kraken output and report text files for each input sample prefixed by input read name. Change line 52 to database path on your system. Usage is: kraken2.sh -i path/to/reads -o kraken_results -f kraken2_summary.xlsx
+
+# subsample.sh 
+Runs the reformat.sh tool from package bbtools to subsample paired end reads based on target read value. To change the sample read target value, edit line 100. The script will make new read files with "SUB" added to the read filename. Usage is: sh susample.sh /path/to/input/reads -o output/reads/folder
+
+# ska_fastq.sh 
+Runs split kmer analysis on paired end reads in a folder and will produce a split kmer file for each paired read. Usage is: sh ska_fastq.sh -i /path/to/reads -o ska_fastq 
+
+# find_clusters_SKA.py
+The find_cluster_SKA.py work specifically to find clusters based on SKA distance output. It produces a matrix of pairwise distances for each sample (matrix.csv) and the list of all samples belonging to a cluster. Clusters are named by letter. If samples have the same letter they are in the same cluster. If samples are not in this list it means they are not in a cluster. Usage is: python find_clusters_SKA.py -i /path/to/SKA.distance.tsv -o clusters.tsv -m average -t 10 --from_ska where -m is the method for average linkage and -t is the imposed threshold of 10 
 
 
 
